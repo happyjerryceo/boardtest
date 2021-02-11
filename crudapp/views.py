@@ -3,7 +3,7 @@ from .models import Blog
 
 
 def home(request):
-    blogs = Blog.objects
+    blogs = Blog.objects.order_by('-id')
     return render(request, 'home.html', {'blogs' : blogs})
 
 def new(request):
